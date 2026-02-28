@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routers import products, patients, orders, prescriptions, chat, inventory, webhooks, admin_auth
+from routers import products, patients, orders, prescriptions, chat, inventory, webhooks, admin_auth, alerts
 
 app = FastAPI(
     title="Nexus Pharmacy API",
@@ -31,6 +31,7 @@ app.include_router(chat.router, prefix="/api")
 app.include_router(inventory.router, prefix="/api")
 app.include_router(webhooks.router, prefix="/api")
 app.include_router(admin_auth.router, prefix="/api")
+app.include_router(alerts.router, prefix="/api")
 
 
 @app.get("/")
