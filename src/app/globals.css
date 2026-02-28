@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-nexus-navy: #0A0A0F;
+  --color-nexus-card: #12121A;
+  --color-nexus-surface: #1A1A2E;
+  --color-nexus-pink: #FF6B9E;
+  --color-nexus-blue: #45C4F9;
+  --color-nexus-teal: #00D4AA;
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #0A0A0F;
+  --foreground: #F0F0F5;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  antialiased: true;
+}
+
+/* Custom Utilities for Pill shapes and Glows */
+@utility pill-gradient {
+  background: linear-gradient(135deg, var(--color-nexus-blue) 0%, var(--color-nexus-pink) 100%);
+}
+
+@utility neon-glow {
+  box-shadow: 0 0 20px rgba(69, 196, 249, 0.3), 0 0 40px rgba(255, 107, 158, 0.2);
+}
+
+@utility card-glass {
+  background: rgba(26, 26, 46, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
